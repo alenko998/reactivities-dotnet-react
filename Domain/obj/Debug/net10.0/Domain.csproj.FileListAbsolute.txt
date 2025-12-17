@@ -9,3 +9,4 @@
 /Users/alen/Desktop/demo/Reactivities/Domain/obj/Debug/net10.0/refint/Domain.dll
 /Users/alen/Desktop/demo/Reactivities/Domain/obj/Debug/net10.0/Domain.pdb
 /Users/alen/Desktop/demo/Reactivities/Domain/obj/Debug/net10.0/ref/Domain.dll
+/Users/alen/Desktop/demo/Reactivities/Domain/obj/Debug/net10.0/Domain.sourcelink.json
