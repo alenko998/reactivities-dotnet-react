@@ -1,10 +1,11 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
 
 type Props = {
-    activity: Activity
+    activity: Activity;
+    cancelSelectActivity: () => void
 }
 
-export default function ActivityDetails({activity}: Props) {
+export default function ActivityDetails({activity, cancelSelectActivity}: Props) {
   return (
     <Card>
         <CardMedia component='img' src={`/images/categoryImages/${activity.category}.jpg`}/>
@@ -15,7 +16,7 @@ export default function ActivityDetails({activity}: Props) {
         </CardContent>
         <CardActions>
             <Button color="primary">Edit</Button>
-            <Button color="inherit">Cancel</Button>
+            <Button onClick={cancelSelectActivity} color="inherit">Cancel</Button>
         </CardActions>
     </Card>
   )
