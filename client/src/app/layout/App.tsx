@@ -47,12 +47,16 @@ function App() {
     setEditMode(false);
   }
 
+  const handleDelete = (id: string) => {
+    setActivities(activities.filter(x=> x.id !== id))
+  }
+
   return (
     <Box sx={{bgcolor: '#eeeeee'}}>
       <CssBaseline/>
       <NavBar openForm={handleOpenForm}/>
       <Container maxWidth='xl' sx={{mt: 3}}>
-       <ActivityDashboard submitForm={handleSubmitForm} closeForm={handleFormClose} editMode={editMode} openForm={handleOpenForm} selectedActivity={selectedActivity} selectActivity={handleSelectActivity} cancelSelectActivity={handleCancelSelectActivity} activities = {activities}/>
+       <ActivityDashboard deleteActivity={handleDelete} submitForm={handleSubmitForm} closeForm={handleFormClose} editMode={editMode} openForm={handleOpenForm} selectedActivity={selectedActivity} selectActivity={handleSelectActivity} cancelSelectActivity={handleCancelSelectActivity} activities = {activities}/>
       </Container>
     </Box>
       

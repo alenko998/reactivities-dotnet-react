@@ -13,13 +13,14 @@ type Props = {
   closeForm: () => void;
   editMode: boolean;
   submitForm: (activity: Activity) => void;
+  deleteActivity: (id:string) => void
 }
 
-export default function ActivityDashboard({submitForm,openForm, closeForm, editMode, activities, selectActivity, cancelSelectActivity, selectedActivity}: Props) {
+export default function ActivityDashboard({deleteActivity,submitForm,openForm, closeForm, editMode, activities, selectActivity, cancelSelectActivity, selectedActivity}: Props) {
   return (
     <Grid2 container spacing={3}>
         <Grid2 size={7}>
-          <ActivityList activities={activities} selectActivity={selectActivity} />
+          <ActivityList deleteActivity={deleteActivity} activities={activities} selectActivity={selectActivity} />
         </Grid2>
         <Grid2 size={5}>
           {selectedActivity && !editMode && <ActivityDetails activity={selectedActivity} cancelSelectActivity={cancelSelectActivity} openForm={openForm} />}
