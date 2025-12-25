@@ -30,7 +30,7 @@ export default function ActivityForm({submitForm, activity, closeForm}: Props) {
             <TextField name='title' label='Title' defaultValue={activity?.title}/>
             <TextField name='description' label='Description' defaultValue={activity?.description} multiline rows={3} />
             <TextField name='category' label='Category' defaultValue={activity?.category} />
-            <TextField name='date' label='Date' type="date" defaultValue={activity?.date} />
+            <TextField name='date' label='Date' type="date" defaultValue={activity?.date ? activity.date.slice(0, 10) : ""} InputLabelProps={{ shrink: true }} />
             <TextField name='city' label='City' defaultValue={activity?.city}/>
             <TextField name='venue' label='Venue' defaultValue={activity?.venue}/>
             <Box display='flex' justifyContent='end' gap={3}>
