@@ -35,12 +35,24 @@ function App() {
     setEditMode(false);
   }
 
+  const handleSubmitForm = (activity: Activity) => {
+    if (activity.id){
+      setActivities(activities.map(x=> x.id=== activity.id ? activity : x));
+    } else {
+      const newActivity = {...activity, id: activities.length.toString() }
+      setSelectedActivity(newActivity);
+      setActivities([...activities, newActivity])
+    }
+
+    setEditMode(false);
+  }
+
   return (
     <Box sx={{bgcolor: '#eeeeee'}}>
       <CssBaseline/>
       <NavBar openForm={handleOpenForm}/>
       <Container maxWidth='xl' sx={{mt: 3}}>
-       <ActivityDashboard closeForm={handleFormClose} editMode={editMode} openForm={handleOpenForm} selectedActivity={selectedActivity} selectActivity={handleSelectActivity} cancelSelectActivity={handleCancelSelectActivity} activities = {activities}/>
+       <ActivityDashboard submitForm={handleSubmitForm} closeForm={handleFormClose} editMode={editMode} openForm={handleOpenForm} selectedActivity={selectedActivity} selectActivity={handleSelectActivity} cancelSelectActivity={handleCancelSelectActivity} activities = {activities}/>
       </Container>
     </Box>
       
