@@ -28,19 +28,6 @@ function App() {
     setEditMode(false);
   }
 
-  const handleSubmitForm = (activity: Activity) => {
-    // if (activity.id){
-    //   setActivities(activities.map(x=> x.id=== activity.id ? activity : x));
-    // } else {
-    //   const newActivity = {...activity, id: activities.length.toString() }
-    //   setSelectedActivity(newActivity);
-    //   setActivities([...activities, newActivity])
-    // }
-    console.log(activity);
-    
-
-    setEditMode(false);
-  }
 
   const handleDelete = (id: string) => {
     console.log(id);
@@ -55,7 +42,7 @@ function App() {
         {!activities || isPending ? (
           <Typography>Loading...</Typography>
         ) : (
-          <ActivityDashboard deleteActivity={handleDelete} submitForm={handleSubmitForm} closeForm={handleFormClose} editMode={editMode} openForm={handleOpenForm} selectedActivity={selectedActivity} selectActivity={handleSelectActivity} cancelSelectActivity={handleCancelSelectActivity} activities = {activities}/>
+          <ActivityDashboard deleteActivity={handleDelete} closeForm={handleFormClose} editMode={editMode} openForm={handleOpenForm} selectedActivity={selectedActivity} selectActivity={handleSelectActivity} cancelSelectActivity={handleCancelSelectActivity} activities = {activities}/>
         )}
       </Container>
     </Box>
