@@ -22,7 +22,7 @@ export default function ActivityDashboard({deleteActivity,openForm, closeForm, e
           <ActivityList deleteActivity={deleteActivity} activities={activities} selectActivity={selectActivity} />
         </Grid2>
         <Grid2 size={5}>
-          {selectedActivity && !editMode && <ActivityDetails activity={selectedActivity} cancelSelectActivity={cancelSelectActivity} openForm={openForm} />}
+          {selectedActivity && !editMode && <ActivityDetails selectedActivity={selectedActivity} cancelSelectActivity={cancelSelectActivity} openForm={openForm} />}
           { editMode && <ActivityForm closeForm={closeForm} activity={selectedActivity}/> }
         </Grid2>
     </Grid2>
