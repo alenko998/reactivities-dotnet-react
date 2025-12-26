@@ -29,11 +29,6 @@ function App() {
   }
 
 
-  const handleDelete = (id: string) => {
-    console.log(id);
-    
-  }
-
   return (
     <Box sx={{bgcolor: '#eeeeee', minHeight:"100vh"}}>
       <CssBaseline/>
@@ -42,7 +37,7 @@ function App() {
         {!activities || isPending ? (
           <Typography>Loading...</Typography>
         ) : (
-          <ActivityDashboard deleteActivity={handleDelete} closeForm={handleFormClose} editMode={editMode} openForm={handleOpenForm} selectedActivity={selectedActivity} selectActivity={handleSelectActivity} cancelSelectActivity={handleCancelSelectActivity} activities = {activities}/>
+          <ActivityDashboard closeForm={handleFormClose} editMode={editMode} openForm={handleOpenForm} selectedActivity={selectedActivity} selectActivity={handleSelectActivity} cancelSelectActivity={handleCancelSelectActivity} activities = {activities}/>
         )}
       </Container>
     </Box>
