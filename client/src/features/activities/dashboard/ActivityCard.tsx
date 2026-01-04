@@ -27,7 +27,7 @@ export default function ActivityCard({activity}: Props) {
           }}
           subheader={
             <>
-              Histed by{' '} <Link to={`/profiles/bob`}>Bob</Link>
+              Hoisted by{' '} <Link to={`/profiles/bob`}>Bob</Link>
             </>
           }
         />
